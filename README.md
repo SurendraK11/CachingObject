@@ -1,3 +1,3 @@
 # CachingImage
 
-Avoid issue for cached images in NSCache being evicted when app goes into background”
+Used NSDiscardableContent for not to evict cached image from NSCache when app goes into background
