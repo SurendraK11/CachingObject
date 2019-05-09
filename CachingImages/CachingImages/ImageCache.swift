@@ -28,6 +28,7 @@ struct NonPersistantImageCache:  CacheItemProtocol {
     private init() {
         self.cachedImages = NSCache()
         self.cachedImages.name = "ImageCache"
+        self.addObserver()
     }
     
     func cacheItem(_ item: UIImage, forKey key: String) {
@@ -48,6 +49,13 @@ struct NonPersistantImageCache:  CacheItemProtocol {
     func removeAllCachedItem() {
         self.cachedImages.removeAllObjects()
     }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(forName: UIApplication.didReceiveMemoryWarningNotification, object: nil, queue: nil) { (_) in
+            self.removeAllCachedItem()
+        }
+    }
+
     
 }
 
