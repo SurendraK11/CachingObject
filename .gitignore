@@ -1,0 +1,6 @@
+.DS_Store
+Podfile.lock
+Pods
+xcuserdata
+IDEWorkspaceChecks.plist
+container
