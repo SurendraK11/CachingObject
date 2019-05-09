@@ -58,7 +58,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let employeeInfo = self.tableView.dequeueReusableCell(withIdentifier: "\(EmployeeInfoTableViewCell.self)", for:  indexPath) as! EmployeeInfoTableViewCell
         let employee = self.employees[indexPath.row]
         employeeInfo.employeeName.text = employee.name
-        employeeInfo.employeePhoto.image = NonPersistantImageCache.shared.cacheItemForKey("\(employee.id)")
+        employeeInfo.employeePhoto.image = NonPersistantImageCache.shared.cachedItemForKey("\(employee.id)")
         return employeeInfo
     }
 }

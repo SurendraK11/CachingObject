@@ -13,7 +13,7 @@ import UIKit
 protocol CacheItemProtocol {
     associatedtype item
     func cacheItem(_  item: item, forKey key: String)
-    func cacheItemForKey(_ key: String) -> item?
+    func cachedItemForKey(_ key: String) -> item?
     func removeCacheItemForKeys(_ keys: [String])
     func removeAllCachedItem()
 }
@@ -36,7 +36,7 @@ struct NonPersistantImageCache:  CacheItemProtocol {
         self.cachedImages.setObject(cacheImage, forKey: key as NSString)
     }
     
-    func cacheItemForKey(_ key: String) -> UIImage? {
+    func cachedItemForKey(_ key: String) -> UIImage? {
         return self.cachedImages.object(forKey: key as NSString)?.item
     }
     
