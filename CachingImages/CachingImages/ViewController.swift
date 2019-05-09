@@ -16,7 +16,6 @@ struct Employee  {
 class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    private let imageCache: ImageCacheProtocol = ImageCache.shared
     private var employees = [Employee]()
     
     override func viewDidLoad() {
@@ -59,7 +58,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let employeeInfo = self.tableView.dequeueReusableCell(withIdentifier: "\(EmployeeInfoTableViewCell.self)", for:  indexPath) as! EmployeeInfoTableViewCell
         let employee = self.employees[indexPath.row]
         employeeInfo.employeeName.text = employee.name
-        employeeInfo.employeePhoto.image = self.imageCache.cachedImageForKey("\(employee.id)")
+        employeeInfo.employeePhoto.image = NonPersistantImageCache.shared.cacheItemForKey("\(employee.id)")
         return employeeInfo
     }
 }

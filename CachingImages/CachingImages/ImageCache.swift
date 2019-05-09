@@ -9,42 +9,45 @@
 import Foundation
 import UIKit
 
-protocol ImageCacheProtocol {
-    func cacheImage(_  image: UIImage, forKey key: String)
-    func cachedImageForKey(_ key: String) -> UIImage?
-    func removeCacheImageForKeys(_ keys: [String])
-    func removeAllCachedImage()
+
+protocol CacheItemProtocol {
+    associatedtype item
+    func cacheItem(_  item: item, forKey key: String)
+    func cacheItemForKey(_ key: String) -> item?
+    func removeCacheItemForKeys(_ keys: [String])
+    func removeAllCachedItem()
 }
 
 
-struct  ImageCache: ImageCacheProtocol {
+struct NonPersistantImageCache:  CacheItemProtocol {
+    typealias item = UIImage
     
-    private let cachedImages: NSCache<NSString, CacheItem<UIImage>>
-    static let shared = ImageCache()
+    private let cachedImages: NSCache<NSString, CacheItem<item>>
+    static let shared = NonPersistantImageCache()
     
     private init() {
         self.cachedImages = NSCache()
         self.cachedImages.name = "ImageCache"
     }
     
-    func cacheImage(_ image: UIImage, forKey key: String) {
-        let cacheImage = CacheItem<UIImage>.init(withCachingItem: image)
+    func cacheItem(_ item: UIImage, forKey key: String) {
+        let cacheImage = CacheItem<UIImage>.init(withCachingItem: item)
         self.cachedImages.setObject(cacheImage, forKey: key as NSString)
     }
     
-    func cachedImageForKey(_ key: String) -> UIImage? {
+    func cacheItemForKey(_ key: String) -> UIImage? {
         return self.cachedImages.object(forKey: key as NSString)?.item
     }
     
-    func removeCacheImageForKeys(_ keys: [String]) {
+    func removeCacheItemForKeys(_ keys: [String]) {
         for key in keys {
             self.cachedImages.removeObject(forKey: key as NSString)
         }
     }
     
-    func removeAllCachedImage() {
+    func removeAllCachedItem() {
         self.cachedImages.removeAllObjects()
     }
     
-    
 }
+
