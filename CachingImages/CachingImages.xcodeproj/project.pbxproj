@@ -18,7 +18,18 @@
 		44156ECD227C84CE00382C4F /* AddImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44156ECB227C84CE00382C4F /* AddImageViewController.xib */; };
 		44156ECF227C873200382C4F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44156ECE227C873200382C4F /* ViewController.xib */; };
 		44212CD522843C07009B5A95 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44212CD422843C07009B5A95 /* CacheItem.swift */; };
+		44F9267822849E4D007C1685 /* NonPersistantImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9267722849E4D007C1685 /* NonPersistantImageCacheTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44F92672228498E2007C1685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44156EA7227C6A4900382C4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44156EAE227C6A4900382C4F;
+			remoteInfo = CachingImages;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		44156EAF227C6A4900382C4F /* CachingImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CachingImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +45,20 @@
 		44156ECB227C84CE00382C4F /* AddImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImageViewController.xib; sourceTree = "<group>"; };
 		44156ECE227C873200382C4F /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		44212CD422843C07009B5A95 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
+		44F9266D228498E2007C1685 /* CachingImagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CachingImagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44F92671228498E2007C1685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44F9267722849E4D007C1685 /* NonPersistantImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonPersistantImageCacheTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		44156EAC227C6A4900382C4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44F9266A228498E2007C1685 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				44156EB1227C6A4900382C4F /* CachingImages */,
+				44F9266E228498E2007C1685 /* CachingImagesTests */,
 				44156EB0227C6A4900382C4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				44156EAF227C6A4900382C4F /* CachingImages.app */,
+				44F9266D228498E2007C1685 /* CachingImagesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +105,15 @@
 			path = CachingImages;
 			sourceTree = "<group>";
 		};
+		44F9266E228498E2007C1685 /* CachingImagesTests */ = {
+			isa = PBXGroup;
+			children = (
+				44F92671228498E2007C1685 /* Info.plist */,
+				44F9267722849E4D007C1685 /* NonPersistantImageCacheTests.swift */,
+			);
+			path = CachingImagesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +134,24 @@
 			productReference = 44156EAF227C6A4900382C4F /* CachingImages.app */;
 			productType = "com.apple.product-type.application";
 		};
+		44F9266C228498E2007C1685 /* CachingImagesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44F92676228498E2007C1685 /* Build configuration list for PBXNativeTarget "CachingImagesTests" */;
+			buildPhases = (
+				44F92669228498E2007C1685 /* Sources */,
+				44F9266A228498E2007C1685 /* Frameworks */,
+				44F9266B228498E2007C1685 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44F92673228498E2007C1685 /* PBXTargetDependency */,
+			);
+			name = CachingImagesTests;
+			productName = CachingImagesTests;
+			productReference = 44F9266D228498E2007C1685 /* CachingImagesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -114,6 +164,10 @@
 				TargetAttributes = {
 					44156EAE227C6A4900382C4F = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					44F9266C228498E2007C1685 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 44156EAE227C6A4900382C4F;
 					};
 				};
 			};
@@ -131,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				44156EAE227C6A4900382C4F /* CachingImages */,
+				44F9266C228498E2007C1685 /* CachingImagesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -145,6 +200,13 @@
 				44156EC9227C7F2600382C4F /* EmployeeInfoTableViewCell.xib in Resources */,
 				44156EBA227C6A4B00382C4F /* Assets.xcassets in Resources */,
 				44156ECD227C84CE00382C4F /* AddImageViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44F9266B228498E2007C1685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +226,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44F92669228498E2007C1685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44F9267822849E4D007C1685 /* NonPersistantImageCacheTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44F92673228498E2007C1685 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44156EAE227C6A4900382C4F /* CachingImages */;
+			targetProxy = 44F92672228498E2007C1685 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		44156EBB227C6A4B00382C4F /* LaunchScreen.storyboard */ = {
@@ -332,6 +410,48 @@
 			};
 			name = Release;
 		};
+		44F92674228498E2007C1685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A6LEV3WJH3;
+				INFOPLIST_FILE = CachingImagesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surendra.CachingImagesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CachingImages.app/CachingImages";
+			};
+			name = Debug;
+		};
+		44F92675228498E2007C1685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A6LEV3WJH3;
+				INFOPLIST_FILE = CachingImagesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surendra.CachingImagesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CachingImages.app/CachingImages";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -349,6 +469,15 @@
 			buildConfigurations = (
 				44156EC2227C6A4B00382C4F /* Debug */,
 				44156EC3227C6A4B00382C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44F92676228498E2007C1685 /* Build configuration list for PBXNativeTarget "CachingImagesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44F92674228498E2007C1685 /* Debug */,
+				44F92675228498E2007C1685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
