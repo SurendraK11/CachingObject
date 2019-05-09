@@ -17,6 +17,7 @@
 		44156ECC227C84CE00382C4F /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156ECA227C84CE00382C4F /* AddImageViewController.swift */; };
 		44156ECD227C84CE00382C4F /* AddImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44156ECB227C84CE00382C4F /* AddImageViewController.xib */; };
 		44156ECF227C873200382C4F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44156ECE227C873200382C4F /* ViewController.xib */; };
+		44212CD522843C07009B5A95 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44212CD422843C07009B5A95 /* CacheItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		44156ECA227C84CE00382C4F /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 		44156ECB227C84CE00382C4F /* AddImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImageViewController.xib; sourceTree = "<group>"; };
 		44156ECE227C873200382C4F /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		44212CD422843C07009B5A95 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				44156EC7227C7F2600382C4F /* EmployeeInfoTableViewCell.xib */,
 				44156ECA227C84CE00382C4F /* AddImageViewController.swift */,
 				44156ECB227C84CE00382C4F /* AddImageViewController.xib */,
+				44212CD422843C07009B5A95 /* CacheItem.swift */,
 			);
 			path = CachingImages;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				44156EC5227C6AEF00382C4F /* ImageCache.swift in Sources */,
 				44156EC8227C7F2600382C4F /* EmployeeInfoTableViewCell.swift in Sources */,
 				44156EB5227C6A4900382C4F /* ViewController.swift in Sources */,
+				44212CD522843C07009B5A95 /* CacheItem.swift in Sources */,
 				44156ECC227C84CE00382C4F /* AddImageViewController.swift in Sources */,
 				44156EB3227C6A4900382C4F /* AppDelegate.swift in Sources */,
 			);

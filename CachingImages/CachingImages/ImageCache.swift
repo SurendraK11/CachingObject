@@ -16,32 +16,10 @@ protocol ImageCacheProtocol {
     func removeAllCachedImage()
 }
 
+
 struct  ImageCache: ImageCacheProtocol {
     
-    private final class CacheImage: NSDiscardableContent {
-        let iamge: UIImage
-        init(withCachingImage image: UIImage) {
-            self.iamge = image
-        }
-        
-        func beginContentAccess() -> Bool {
-            return true
-        }
-        
-        func endContentAccess() {
-            // No implementation required at present
-        }
-        
-        func discardContentIfPossible() {
-            // No implementation required at present
-        }
-        
-        func isContentDiscarded() -> Bool {
-            return false
-        }
-    }
-    
-    private let cachedImages: NSCache<NSString, CacheImage>
+    private let cachedImages: NSCache<NSString, CacheItem<UIImage>>
     static let shared = ImageCache()
     
     private init() {
@@ -50,12 +28,12 @@ struct  ImageCache: ImageCacheProtocol {
     }
     
     func cacheImage(_ image: UIImage, forKey key: String) {
-        let cacheImage = CacheImage(withCachingImage: image)
+        let cacheImage = CacheItem<UIImage>.init(withCachingItem: image)
         self.cachedImages.setObject(cacheImage, forKey: key as NSString)
     }
     
     func cachedImageForKey(_ key: String) -> UIImage? {
-        return self.cachedImages.object(forKey: key as NSString)?.iamge
+        return self.cachedImages.object(forKey: key as NSString)?.item
     }
     
     func removeCacheImageForKeys(_ keys: [String]) {
