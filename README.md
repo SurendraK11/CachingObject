@@ -1,6 +1,6 @@
 # Caching Object in NSCache
 
-Used NSDiscardableContent for not to evict cached image from NSCache when app goes into background
+Used NSDiscardableContent for not to evict cached object e.g. UIImage from NSCache when app goes into background
 
 
 CacheItem<T> is geneic class, confirms NSDiscardableContent. Main objective of this class is to wrap item in stored property 
