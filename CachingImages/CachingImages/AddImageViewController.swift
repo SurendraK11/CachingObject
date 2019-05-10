@@ -52,7 +52,7 @@ extension AddImageViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         if let pickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
-            NonPersistantImageCache.shared.cacheItem(pickedImage, forKey: "\(self.employee.id)")
+            (UIApplication.shared.delegate as? AppDelegate)?.nonPersistantImageCache.cacheItem(pickedImage, forKey: "\(self.employee.id)")
             self.imagePicker?.dismiss(animated: false, completion: nil)
             self.navigationController?.popViewController(animated: true)
         }

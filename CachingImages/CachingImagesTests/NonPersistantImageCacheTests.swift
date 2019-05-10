@@ -11,7 +11,7 @@ import XCTest
 
 class NonPersistantImageCacheTests: XCTestCase {
 
-    let imageCache = NonPersistantImageCache.shared
+    let imageCache = (UIApplication.shared.delegate as? AppDelegate)?.nonPersistantImageCache
     let imageCacheKey = "imageCacheKey"
     
     override func setUp() {
@@ -24,8 +24,8 @@ class NonPersistantImageCacheTests: XCTestCase {
 
     func testCachingImageIntoNonPersistantImageCache() {
         let imageToBeChached = #imageLiteral(resourceName: "TestImage")
-        imageCache.cacheItem(imageToBeChached, forKey: imageCacheKey)
-        let retrievedImage = self.imageCache.cachedItemForKey(self.imageCacheKey)
+        imageCache?.cacheItem(imageToBeChached, forKey: imageCacheKey)
+        let retrievedImage = self.imageCache?.cachedItemForKey(self.imageCacheKey)
         XCTAssertEqual(imageToBeChached, retrievedImage, "Chached image should be equal to retrieved image")
     }
 

@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44108A4D22856CA900B51EEC /* CacheItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44108A4C22856CA900B51EEC /* CacheItemProtocol.swift */; };
 		44156EB3227C6A4900382C4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156EB2227C6A4900382C4F /* AppDelegate.swift */; };
 		44156EB5227C6A4900382C4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156EB4227C6A4900382C4F /* ViewController.swift */; };
 		44156EBA227C6A4B00382C4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44156EB9227C6A4B00382C4F /* Assets.xcassets */; };
 		44156EBD227C6A4B00382C4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44156EBB227C6A4B00382C4F /* LaunchScreen.storyboard */; };
-		44156EC5227C6AEF00382C4F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156EC4227C6AEF00382C4F /* ImageCache.swift */; };
+		44156EC5227C6AEF00382C4F /* NonPersistantObjectCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156EC4227C6AEF00382C4F /* NonPersistantObjectCache.swift */; };
 		44156EC8227C7F2600382C4F /* EmployeeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156EC6227C7F2600382C4F /* EmployeeInfoTableViewCell.swift */; };
 		44156EC9227C7F2600382C4F /* EmployeeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44156EC7227C7F2600382C4F /* EmployeeInfoTableViewCell.xib */; };
 		44156ECC227C84CE00382C4F /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44156ECA227C84CE00382C4F /* AddImageViewController.swift */; };
@@ -32,13 +33,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44108A4C22856CA900B51EEC /* CacheItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItemProtocol.swift; sourceTree = "<group>"; };
 		44156EAF227C6A4900382C4F /* CachingImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CachingImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44156EB2227C6A4900382C4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44156EB4227C6A4900382C4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		44156EB9227C6A4B00382C4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44156EBC227C6A4B00382C4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44156EBE227C6A4B00382C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44156EC4227C6AEF00382C4F /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		44156EC4227C6AEF00382C4F /* NonPersistantObjectCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonPersistantObjectCache.swift; sourceTree = "<group>"; };
 		44156EC6227C7F2600382C4F /* EmployeeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		44156EC7227C7F2600382C4F /* EmployeeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeInfoTableViewCell.xib; sourceTree = "<group>"; };
 		44156ECA227C84CE00382C4F /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44108A4B22856C8400B51EEC /* CacheComponents */ = {
+			isa = PBXGroup;
+			children = (
+				44212CD422843C07009B5A95 /* CacheItem.swift */,
+				44108A4C22856CA900B51EEC /* CacheItemProtocol.swift */,
+				44156EC4227C6AEF00382C4F /* NonPersistantObjectCache.swift */,
+			);
+			path = CacheComponents;
+			sourceTree = "<group>";
+		};
 		44156EA6227C6A4900382C4F = {
 			isa = PBXGroup;
 			children = (
@@ -89,18 +101,17 @@
 		44156EB1227C6A4900382C4F /* CachingImages */ = {
 			isa = PBXGroup;
 			children = (
+				44108A4B22856C8400B51EEC /* CacheComponents */,
 				44156EB2227C6A4900382C4F /* AppDelegate.swift */,
 				44156EB4227C6A4900382C4F /* ViewController.swift */,
 				44156ECE227C873200382C4F /* ViewController.xib */,
 				44156EB9227C6A4B00382C4F /* Assets.xcassets */,
 				44156EBB227C6A4B00382C4F /* LaunchScreen.storyboard */,
 				44156EBE227C6A4B00382C4F /* Info.plist */,
-				44156EC4227C6AEF00382C4F /* ImageCache.swift */,
 				44156EC6227C7F2600382C4F /* EmployeeInfoTableViewCell.swift */,
 				44156EC7227C7F2600382C4F /* EmployeeInfoTableViewCell.xib */,
 				44156ECA227C84CE00382C4F /* AddImageViewController.swift */,
 				44156ECB227C84CE00382C4F /* AddImageViewController.xib */,
-				44212CD422843C07009B5A95 /* CacheItem.swift */,
 			);
 			path = CachingImages;
 			sourceTree = "<group>";
@@ -217,9 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44156EC5227C6AEF00382C4F /* ImageCache.swift in Sources */,
+				44156EC5227C6AEF00382C4F /* NonPersistantObjectCache.swift in Sources */,
 				44156EC8227C7F2600382C4F /* EmployeeInfoTableViewCell.swift in Sources */,
 				44156EB5227C6A4900382C4F /* ViewController.swift in Sources */,
+				44108A4D22856CA900B51EEC /* CacheItemProtocol.swift in Sources */,
 				44212CD522843C07009B5A95 /* CacheItem.swift in Sources */,
 				44156ECC227C84CE00382C4F /* AddImageViewController.swift in Sources */,
 				44156EB3227C6A4900382C4F /* AppDelegate.swift in Sources */,
